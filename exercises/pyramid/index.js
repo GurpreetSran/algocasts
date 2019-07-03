@@ -15,16 +15,27 @@
 //       '#####'
 
 function pyramid(n) {    	
-    let x = '';  
-   	
-   	for(let col = 0; col < n; col ++) {
-        x = '';
-        for(let row = 0; row < (n + n) - 1; row++) {
-            x += 'x'
+    
+       const midpoint = Math.floor((2 * n - 1) / 2);          
+          
+   	    for (let row = 0; row < n; row++) {
+            let level = '';
+            
+            for (let column = 0; column < 2 * n - 1; column++) {
+            
+            if (midpoint - row <= column && midpoint + row >= column) {
+                level += '#';
+            } else {
+                level += ' ';
+            }
         }
-        console.log(x);
+        console.log(level);
     }
 }
+
+
+// Recursive to do 
+
 
 pyramid(3)
 
